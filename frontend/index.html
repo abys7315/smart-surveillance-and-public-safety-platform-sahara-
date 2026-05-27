@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S.A.H.A.R.A - Smart Surveillance</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="app-container">
+      
+      <!-- HEADER -->
+      <header class="header">
+        <div class="logo">
+          <h1>S.A.H.A.R.A</h1>
+          <span class="subtitle">Public Safety & Surveillance</span>
+        </div>
+        <div class="system-status">
+          <div class="status-indicator armed"></div>
+          <span>System Armed</span>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard">
+        
+        <!-- VIDEO STREAM -->
+        <section class="video-section card glass">
+          <div class="card-header">
+            <h2>Live Camera Feed</h2>
+            <span class="badge">LIVE</span>
+          </div>
+          <div class="video-container">
+            <!-- Connect to FastAPI video feed endpoint -->
+            <img id="video-feed" src="http://127.0.0.1:8000/video_feed" alt="Live Camera Feed Not Connected" />
+            
+            <div class="camera-overlay">
+              <span>CAM 01 - MAIN SQUARE</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALERTS PANEL -->
+        <aside class="alerts-section card glass">
+          <div class="card-header">
+            <h2>Incident Log</h2>
+            <button id="clear-alerts" class="btn-clear">Clear</button>
+          </div>
+          <div class="alerts-container" id="alerts-container">
+            <div class="empty-state">No incidents detected.</div>
+          </div>
+        </aside>
+
+      </main>
+    </div>
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

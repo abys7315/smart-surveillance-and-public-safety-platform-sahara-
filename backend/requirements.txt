@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+websockets
+opencv-python
+torch
+ultralytics
+transformers
+roboflow
